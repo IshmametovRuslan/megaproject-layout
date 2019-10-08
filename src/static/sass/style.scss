@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900&display=swap');
+
+$gray: #414146;
+$lightgray: #f6f6f6;
+$yellow: #ffea00;
+$black: #000000;
+$white: #ffffff;
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+header {
+    width: 100%;
+    background-color: $lightgray;
+    padding: 22px 0 22px;
+
+    .header__container {
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            color: $black;
+            font-size: 16px;
+            padding: 27px 9px;
+
+            &:hover {
+                background-color: $yellow;
+            }
+        }
+
+        ul {
+            display: flex;
+        }
+
+        nav {
+
+        }
+    }
+}
+
+
+@media screen and (max-width: 420px) {
+    header {
+
+
+        .header__container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+
+            .main-menu {
+                display: none;
+
+                li {
+                    width: 100%;
+                    display: block;
+                    font-size: 12px;
+                }
+
+                a {
+                    display: block;
+                    padding: 8px;
+                }
+            }
+
+            .toggle-button {
+                text-align: center;
+                display: block;
+                cursor: pointer;
+                color: $black;
+
+                &:after {
+                    content: attr(data-open);
+                    display: block;
+                }
+            }
+
+            #menu-checkbox:checked + nav[role='navigation'] .main-menu {
+                display: block;
+            }
+
+            #menu-checkbox:checked + nav[role='navigation'] .toggle-button:after {
+                content: attr(data-close);
+            }
+
+            a {
+                margin-right: -65px;
+            }
+
+            .main-menu {
+                position: relative;
+                top: 10px;
+            }
+        }
+    }
+}
