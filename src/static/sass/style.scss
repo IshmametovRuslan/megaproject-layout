@@ -8,6 +8,7 @@ $white: #ffffff;
 
 body {
     font-family: 'Poppins', sans-serif;
+    background: $lightgray;
 }
 
 * {
@@ -34,8 +35,7 @@ header {
     padding: 22px 0 22px;
 
     .header__container {
-        max-width: 1400px;
-        width: 100%;
+        width: 83%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -53,19 +53,177 @@ header {
 
         ul {
             display: flex;
+
+            li {
+                margin-right: 70px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+main {
+    .main__top-slide {
+        background: url("../img/slider_bg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 125px 0 300px;
+
+        .top-slide__text {
+            margin-bottom: 8px;
+            margin-left: 10%;
+
         }
 
-        nav {
+        h2 {
+            font-size: 70px;
+            font-weight: 400;
+            display: inline-block;
+            padding: 13px;
+            line-height: 1;
+            background-color: $yellow;
+        }
 
+        p {
+            font-size: 24px;
+            color: $white;
+            background-color: $gray;
+            display: inline-block;
+            padding: 0 5px;
+        }
+    }
+
+    .main__specialize {
+        padding: 70px 0 25px;
+        width: 100%;
+        background-color: $lightgray;
+
+        .specialize__container {
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+
+            h3 {
+                font-size: 35px;
+                color: $gray;
+                font-weight: 400;
+            }
+
+            p {
+                font-size: 24px;
+                color: $gray;
+                margin-bottom: 65px;
+            }
+
+            .specialize__cards {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-bottom: 90px;
+
+                #redesign {
+                    background: url("../img/bog post img.jpg") no-repeat center $yellow;
+                    background-size: cover;
+                }
+
+                #web_dev {
+                    background: url("../img/web development.png") no-repeat center $yellow;
+                    background-size: 40%;
+                }
+
+                #web_design {
+                    background: url("../img/web design icon.png") no-repeat center $yellow;
+                    background-size: 40%;
+                }
+
+                #grafic_design {
+                    background: url("../img/graphic design icon.png") no-repeat center $yellow;
+                    background-size: 30%;
+                }
+
+                .card {
+                    width: 255px;
+                    margin: 5px;
+
+                    .card_top {
+                        height: 200px;
+                        background-color: $yellow;
+                        padding: 10px 15px;
+
+                        p {
+                            font-size: 20px;
+                            font-weight: 500;
+                            position: relative;
+                            bottom: -175px;
+
+                        }
+
+                    }
+
+                    .card_bottom {
+                        background-color: $gray;
+                        height: 85px;
+                        display: flex;
+                        align-items: center;
+
+                        p {
+                            color: $white;
+                            margin: 0;
+                            font-size: 20px;
+
+                        }
+                    }
+
+                    &:not(:first-child) {
+                        .card_bottom {
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main__portfolio {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        h4 {
+            font-weight: 300;
+            font-size: 18px;
+            color: $yellow;
+            background: $gray;
+            display: inline-block;
+            padding: 0 13px;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 16px;
+            color: $gray;
+
+        }
+        .portfolio__toggles {
+            padding: 30px 0;
+            button {
+                border: none;
+                color: $gray;
+                cursor: pointer;
+                font-size: 16px;
+                margin: 0 5px;
+                background: transparent;
+            }
         }
     }
 }
 
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 576px) {
     header {
-
-
         .header__container {
             width: 100%;
             display: flex;
@@ -78,12 +236,13 @@ header {
                 li {
                     width: 100%;
                     display: block;
-                    font-size: 12px;
-                }
+                    margin-right: 0;
 
-                a {
-                    display: block;
-                    padding: 8px;
+                    a {
+                        display: block;
+                        padding: 8px;
+                        font-size: 16px !important;
+                    }
                 }
             }
 
@@ -92,6 +251,7 @@ header {
                 display: block;
                 cursor: pointer;
                 color: $black;
+                margin-top: 45px;
 
                 &:after {
                     content: attr(data-open);
@@ -114,6 +274,60 @@ header {
             .main-menu {
                 position: relative;
                 top: 10px;
+            }
+        }
+    }
+
+    main {
+        .main__top-slide {
+            .top-slide__text {
+                h2 {
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        .header__container {
+            .main-menu {
+                li {
+                    a {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    header {
+        .header__container {
+            .main-menu {
+                li {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    main {
+        .main__top-slide {
+            .top-slide__text {
+                margin: 0 auto 8px;
+                text-align: center;
+            }
+        }
+
+        .main__specialize {
+            .specialize__container {
+                .specialize__cards {
+                    justify-content: center;
+                }
             }
         }
     }
