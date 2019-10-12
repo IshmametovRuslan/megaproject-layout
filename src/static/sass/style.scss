@@ -157,7 +157,7 @@ main {
                             font-size: 20px;
                             font-weight: 500;
                             position: relative;
-                            bottom: -175px;
+                            bottom: -160px;
 
                         }
 
@@ -397,7 +397,7 @@ footer {
 
                 .contact__item {
                     display: flex;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
 
                     &:last-child {
                         margin-bottom: 50px;
@@ -412,7 +412,7 @@ footer {
 
             h4,
             P {
-                margin-bottom: 20px;
+                margin-bottom: 15px;
             }
             .send-email {
                 input {
@@ -437,6 +437,29 @@ footer {
                     &:hover {
                         cursor: pointer;
                     }
+                }
+            }
+        }
+    }
+    .footer__navigation {
+        width: 100%;
+        height: 70px;
+        background: $black;
+        display: flex;
+        align-content: center;
+        padding: 20px 0;
+
+        nav {
+            width: 42%;
+            margin: auto;
+            ul {
+                display: flex;
+                height: 100%;
+                justify-content: space-between;
+                align-content: center;
+
+                a {
+                    color: $white;
                 }
             }
         }
@@ -528,6 +551,23 @@ footer {
             }
         }
     }
+
+    footer {
+        .footer__navigation {
+            height: auto;
+
+            nav {
+                width: 48% !important;
+
+                .footer__menu {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -582,6 +622,14 @@ footer {
                 .specialize__cards {
                     justify-content: center;
                 }
+            }
+        }
+    }
+
+    footer {
+        .footer__navigation {
+            nav {
+                width: 70%;
             }
         }
     }
